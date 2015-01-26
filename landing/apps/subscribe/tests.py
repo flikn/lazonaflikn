@@ -70,3 +70,23 @@ class SubscriptorTestCase(TestCase):
             # Check that the json response code is invalid. Client is not
             # valid.
             self.assertEqual(dresponse.get("code"), 500)
+
+    def test_unique_successful_subscribe_view(self):
+        user = {
+            "client": 20476348,
+            "account": 602364702,
+        }
+
+        # One client just can subscribe once.
+        response = self.client.post('/api/subscribe/', data=user)
+        self.assertEqual(response.status_code, 200)
+        dresponse = json.loads(response.content)
+        # Check that the json response code is successful.
+        self.assertEqual(dresponse.get("code"), 200)
+
+        # Client and account must not be on the DB.
+        response = self.client.post('/api/subscribe/', data=user)
+        self.assertEqual(response.status_code, 200)
+        dresponse = json.loads(response.content)
+        # The response code must be restricted 403.
+        self.assertEqual(dresponse.get("code"), 403)
