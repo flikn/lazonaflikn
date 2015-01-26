@@ -72,21 +72,40 @@ class SubscriptorTestCase(TestCase):
             self.assertEqual(dresponse.get("code"), 500)
 
     def test_unique_successful_subscribe_view(self):
-        user = {
-            "client": 20476348,
-            "account": 602364702,
-        }
+        unique_users = [
+            {
+                "client": 20476348,
+                "account": 602364702,
+            },
+            {
+                "client": 170110576,
+                "account": 667861859,
+            },
+        ]
 
-        # One client just can subscribe once.
-        response = self.client.post('/api/subscribe/', data=user)
-        self.assertEqual(response.status_code, 200)
-        dresponse = json.loads(response.content)
-        # Check that the json response code is successful.
-        self.assertEqual(dresponse.get("code"), 200)
+        # Get method shouldn't change anything.
+        for unique_user in unique_users:
+            response = self.client.get('/api/subscribe/', data=unique_user)
+            self.assertEqual(response.status_code, 200)
+            dresponse = json.loads(response.content)
+            self.assertEqual(dresponse.get("code"), 200)
 
-        # Client and account must not be on the DB.
-        response = self.client.post('/api/subscribe/', data=user)
-        self.assertEqual(response.status_code, 200)
-        dresponse = json.loads(response.content)
-        # The response code must be restricted 403.
-        self.assertEqual(dresponse.get("code"), 403)
+            response = self.client.get('/api/subscribe/', data=unique_user)
+            self.assertEqual(response.status_code, 200)
+            dresponse = json.loads(response.content)
+            self.assertEqual(dresponse.get("code"), 200)
+
+        for unique_user in unique_users:
+            # One client just can subscribe once.
+            response = self.client.post('/api/subscribe/', data=unique_user)
+            self.assertEqual(response.status_code, 200)
+            dresponse = json.loads(response.content)
+            # Check that the json response code is successful.
+            self.assertEqual(dresponse.get("code"), 200)
+
+            # Client and account must not be on the DB.
+            response = self.client.post('/api/subscribe/', data=unique_user)
+            self.assertEqual(response.status_code, 200)
+            dresponse = json.loads(response.content)
+            # The response code must be restricted 403.
+            self.assertEqual(dresponse.get("code"), 403)
