@@ -13,7 +13,7 @@ DEBUG = bool(os.environ.get('DEBUG', False))
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split()
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split()
 
 
 # Grappelli customization
