@@ -7,4 +7,6 @@ urlpatterns = patterns(
     # Grappelli url.
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/',  include(admin.site.urls)),
+    # Subscribe app.
+    url(r'^api/', include('apps.subscribe.urls', namespace='subscribe_app')),
 )
