@@ -17,7 +17,7 @@ class Subscriptor(models.Model):
     )
 
     def __unicode__(self):
-        return ":".join([self.title, str(self.username)])
+        return ":".join([self.client, self.account])
 
     class Meta:
         db_table = "subscriptor"
