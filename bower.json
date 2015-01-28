@@ -1,0 +1,17 @@
+{
+  "name": "lazonaflikn",
+  "version": "0.0.1",
+  "authors": [
+    "flikn"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.2",
+    "fontawesome": "~4.3.0"
+  }
+}
