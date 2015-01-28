@@ -12,7 +12,7 @@ node_modules/
 *.sass-cache
 
 # Bower directory
-landing/frontdev/bower_components/
+bower_components/
 
 # Local environment variables
 *.env
