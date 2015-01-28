@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="menu_responsive">
+  <div class="mr_content">
+    <input class="search_i" placeholder="Buscar" type="text" />
+    <ul class="mc_list">
+      <li>
+        <a href="">Cursos</a>
+        <ul class="ml_sublist">
+          <li><a href="">Diseño</a>
+          </li>
+          <li><a href="">Fotografía</a>
+          </li>
+          <li><a href="">Marketing</a>
+          </li>
+          <li><a href="">Negocios</a>
+          </li>
+          <li><a href="">Emprendimiento</a>
+          </li>
+          <li><a href="">Música</a>
+          </li>
+          <li><a href="">Cocina</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="">Proyectos</a>
+      </li>
+      <li><a href="">Foros</a>
+      </li>
+      <li><a href="">Membresía</a>
+      </li>
+      <li><a href="">Invita a un Amigo</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  {% include "home/header.html" %}
+
+  <div class="check_out">
+    <div class="co_margen">
+
+      <div class="co_variable">
+        <div class="cv_head">
+          <div class="ch_title ct_first">1. Iniciar Sesión <img src="{% static "img/empresa_check.png" %}" alt="" />
+          </div>
+          <div class="ch_title">2. Ingresa Usuario Movistar</div>
+        </div>
+        <div class="cv_body">
+
+        <div class="star_session">
+          
+          <form class="pc_inputs" role="form" method="POST">
+            {% csrf_token %}
+            <label for="client">Cliente</label>
+            <input type="text" name="client" id="client" placeholder="Ingrese su # de cliente movistar" />
+            
+            <label for="account">Cuenta</label>
+            <input type="text" name="account" id="account" placeholder="Ingrese su # de cuenta movistar" />
+          </form>
+          
+          <a id="button" class="btn_naranja">Obtener descuento!</a>
+
+          <article>
+            <br>
+            <br>
+            <h3 id="message">
+            </h3>
+            <br>
+            <br>
+          </article>
+          
+          <div class="pc_line">
+            <p>O</p>
+          </div>
+          
+          <div class="term_condition">
+            <p>Al registrarte estarás aceptando nuestros <a href="">Términos y Condiciones</a> y <a href="">Políticas de Privacidad</a>.</p>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+      {% include "home/banner.html" %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}
+
+{% block js %}
+  {{ block.super }}
+  <script src="{% static "js/jquery.cookie.js" %}"></script>
+  <script src="{% static "js/subscribe.js" %}"></script>
+{% endblock js %}

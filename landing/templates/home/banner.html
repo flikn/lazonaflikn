@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<div class="co_static">
+  <div class="cos_member">
+    <ul class="com_list">
+      <form name="choose_price">
+        <li>
+          <label for="anual">Acceso gratis a membresía mensual por 03 meses
+          </label>
+        </li>
+      </form>
+    </ul>
+
+    <div id="prices">
+      <div class="com_price">
+        <h5> <strike>US$ 9.99</strike> </h5>
+      </div>
+
+      <div class="com_price">
+        <h5>US$ 0.00</h5>
+      </div>
+    </div>
+
+  </div>
+  <div class="get_recibe">
+    <h3>¿Qué incluyen nuestros cursos?</h3>
+    <ul class="gr_list">
+      <li>
+        <div class="img">
+          <img src="{% static "img/checkout1.jpg" %}" alt="" />
+        </div>
+        <div class="text">
+          <h5>Videocursos paso a paso</h5>
+          <p>Contenidos 100% Online. Videos de alta calidad que podrás ver cuantas veces quieras a la hora que quieras.</p>
+        </div>
+      </li>
+      <li>
+        <div class="img">
+          <img src="{% static "img/checkout2.jpg" %}" alt="" />
+        </div>
+        <div class="text">
+          <h5>Acceso Ilimitado</h5>
+          <p>Los cursos nunca expirarán y están disponibles las 24 horas del día sin ninguna restricción.</p>
+        </div>
+      </li>
+      <li>
+        <div class="img">
+          <img src="{% static "img/checkout3.jpg" %}" alt="" />
+        </div>
+        <div class="text">
+          <h5>Disponibilidad Total</h5>
+          <p>Puedes tomar tus cursos desde cualquier dispositivo, teléfono, tablet o computador, incluso desde varios a la vez.</p>
+        </div>
+      </li>
+      <li>
+        <div class="img">
+          <img src="{% static "img/checkout4.jpg" %}" alt="" />
+        </div>
+        <div class="text">
+          <h5>Certificaciones al terminar</h5>
+          <p>Cuando completes el 100% de tu curso, el sistema te dará acceso a tu certificación para que la descargues e imprimas.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

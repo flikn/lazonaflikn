@@ -9,4 +9,6 @@ urlpatterns = patterns(
     url(r'^admin/',  include(admin.site.urls)),
     # Subscribe app.
     url(r'^api/', include('apps.subscribe.urls', namespace='subscribe_app')),
+    # Home app.
+    url(r'^', include('apps.home.urls', namespace='home_app')),
 )

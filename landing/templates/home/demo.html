@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section class="container">
+  <div class="loginContainer">
+    <div class="outerContent">
+      <div class="innerContent">
+
+        <article class="formContainer">
+          <form role="form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="client">Cliente</label>
+              <input name="client" type="text" class="form-control" id="client" placeholder="Ingrese su # de cliente movistar">
+            </div>
+            <div class="form-group">
+              <label for="account">Cuenta</label>
+              <input name="account" type="text" class="form-control" id="account" placeholder="Ingrese su # de cuenta movistar">
+            </div>
+            <button id="button" type="submit" class="btn btn-default">Obtener Cupón</button>
+          </form>
+        </article>
+
+        <article>
+          <h1 id="message"></h1>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block js %}
+  {{ block.super }}
+  <script src="{% static "js/jquery.cookie.js" %}"></script>
+  <script src="{% static "js/subscribe.js" %}"></script>
+{% endblock js %}

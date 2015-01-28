@@ -1,0 +1,1109 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="menu_responsive">
+  <div class="mr_content">
+    <ul class="mc_list">
+      <input class="search_i" placeholder="Buscar" type="text" />
+      <li>
+        <a href="">Cursos</a>
+        <ul class="ml_sublist">
+          <li><a href="">Diseño</a>
+          </li>
+          <li><a href="">Fotografía</a>
+          </li>
+          <li><a href="">Marketing</a>
+          </li>
+          <li><a href="">Negocios</a>
+          </li>
+          <li><a href="">Emprendimiento</a>
+          </li>
+          <li><a href="">Música</a>
+          </li>
+          <li><a href="">Cocina</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="">Proyectos</a>
+      </li>
+      <li><a href="">Foros</a>
+      </li>
+      <li><a href="">Membresía</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="back_shadow"></div>
+  <div class="modal welcome_flikn">
+    <div class="wf_content">
+      <div class="wf_title">
+        <img src="{% static "img/only_buo.png" %}" alt="" />
+        <h2>¡Bienvenido a Flikn!</h2>
+        <p>Cuéntanos más sobre ti</p>
+      </div>
+      <div class="wf_body">
+        <form action="">
+          <div>
+            <div class="wb_inputs">
+              <h4>¿Quién eres?</h4>
+              <ul class="wi_radio">
+                <li>
+                  <input type="radio" />
+                  <p>Soy una persona</p>
+                </li>
+                <li>
+                  <input type="radio" />
+                  <p>Somos un colectivo</p>
+                </li>
+              </ul>
+            </div>
+            <div class="wb_double">
+              <div class="wb_inputs">
+                <h4>Nombre</h4>
+                <input class="line_input" type="text" />
+              </div>
+              <div class="wb_inputs">
+                <h4>Género</h4>
+                <ul class="wi_radio">
+                  <li>
+                    <input type="radio" />
+                    <p>Masculino</p>
+                  </li>
+                  <li>
+                    <input type="radio" />
+                    <p>Femenino</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="wb_double">
+              <div class="wb_inputs">
+                <h4>País</h4>
+                <select class="line_input">
+                  <option value="0">Perú</option>
+                  <option value="1">Chile</option>
+                  <option value="2">Mexico</option>
+                  <option value="3">Argentina</option>
+                </select>
+              </div>
+              <div class="wb_inputs">
+                <h4>Ciudad</h4>
+                <select class="line_input">
+                  <option value="0">Lima</option>
+                  <option value="1">Arequipa</option>
+                  <option value="2">Piura</option>
+                  <option value="3">Ica</option>
+                </select>
+              </div>
+            </div>
+            <div class="wb_inputs">
+              <h4>¿Qué disciplinas te interesan?</h4>
+              <input class="line_input" type="text" />
+            </div>
+          </div>
+          <a class="btn_general next_new_user">Continuar</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal pu_signup signup_mod">
+    <div class="ps_content">
+      <div class="close general_close">X</div>
+      <div class="pc_ancho">
+        <h3>Regístrate gratis</h3>
+
+        <div class="pc_buttons">
+          <a href="" class="facebook"><i class="fa fa-facebook"></i>
+
+                    <p>Regístrate con Facebook</p></a>
+          <a href="" class="twitter"><i class="fa fa-twitter"></i>
+
+                    <p>Regístrate con Twitter</p></a>
+        </div>
+        <div class="pc_line">
+          <p>O</p>
+        </div>
+        <div class="pc_inputs">
+          <div class="pi_inline">
+            <input type="text" placeholder="Nombre" />
+            <input type="text" placeholder="Apellido" />
+          </div>
+          <input type="text" placeholder="Correo electrónico" />
+          <input type="password" placeholder="Contraseña" />
+        </div>
+        <a href="" class="btn_naranja">Regístrate</a>
+
+        <div class="term_condition">
+          <p>Al registrarte estarás aceptando nuestros <a href="">Términos y Condiciones</a> y <a href="">Políticas de
+                    Privacidad</a>.</p>
+        </div>
+      </div>
+      <div class="pc_login">
+        <p>¿Ya tienes una cuenta? <a href="">Inicia sesión</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="modal pu_signup login_mod">
+    <div class="ps_content">
+      <div class="close general_close">X</div>
+      <div class="pc_ancho">
+        <h3>Inicia Sesión</h3>
+
+        <div class="pc_buttons">
+          <a href="" class="facebook"><i class="fa fa-facebook"></i>
+
+                    <p>Ingresa con Facebook</p></a>
+          <a href="" class="twitter"><i class="fa fa-twitter"></i>
+
+                    <p>Ingresa con Twitter</p></a>
+        </div>
+        <div class="pc_line">
+          <p>O</p>
+        </div>
+        <div class="pc_error">
+          <img src="{% static "img/error_register.png" %}" alt="" />
+          <p>Correo no registrado</p>
+        </div>
+        <div class="pc_error">
+          <img src="{% static "img/error_register.png" %}" alt="" />
+          <p>La contraseña es incorrecta</p>
+        </div>
+        <div class="pc_inputs">
+          <input type="text" placeholder="Correo electrónico" />
+          <input type="password" placeholder="Contraseña" />
+          <a href="" class="password">¿Olvidaste tu contraseña?</a>
+        </div>
+        <a href="" class="btn_naranja">Iniciar Sesión</a>
+        <div class="remember_info">
+          <input type="checkbox" id="remember" />
+          <p>
+            <label for="remember">Recordar mis datos</label>
+          </p>
+        </div>
+      </div>
+      <div class="pc_login">
+        <p>¿No tienes una cuenta? <a href="">Regístrate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="banner banner_one">
+    <div class="bo_header">
+      <div class="header_home">
+        <div class="max_margen">
+          <div class="hh_nav">
+            <div class="hn_logo">
+              <div id="slide_right" class="hl_bars"><i class="fa fa-bars"></i>
+              </div>
+              <img class="logo_buo" src="{% static "img/logo_blanco.png" %}" alt="" />
+            </div>
+            <ul class="hn_navegador">
+              <li class="hn_drop">
+                <div class="hd_text">
+                  <p>Cursos</p>
+                  <div class="caret"><i class="fa fa-angle-down drop_off"></i><i class="fa fa-angle-up drop_on"></i>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <div class="drop_cont">
+                    <ul>
+                      <li><a class="naranja" href="">Diseño</a>
+                      </li>
+                      <li><a class="celeste" href="">Fotografía</a>
+                      </li>
+                      <li><a class="verde" href="">Marketing</a>
+                      </li>
+                      <li><a class="morado" href="">Negocios</a>
+                      </li>
+                      <li><a class="violeta" href="">Emprendimiento</a>
+                      </li>
+                      <li><a class="verde_sh" href="">Música</a>
+                      </li>
+                      <li><a class="rojo" href="">Cocina</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="">Proyectos</a>
+              </li>
+              <li><a href="">Foro</a>
+              </li>
+              <li><a href="">Membresía</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hh_signup">
+            <div class="hs_enter id_login"><a>Entrar</a>
+            </div>
+            <div class="hs_registro id_signup">Regístrate</div>
+          </div>
+        </div>
+      </div>
+      <div class="header_over">
+        <div class="max_margen">
+          <div class="hh_nav">
+            <div class="hn_logo">
+              <img src="{% static "img/logo_plomo.png" %}" alt="" />
+            </div>
+            <ul class="hn_navegador">
+              <li id="drop_course" class="hn_drop">
+                <div class="hd_text">
+                  <p>Cursos</p>
+                  <div class="caret"><i class="fa fa-angle-down drop_off"></i><i class="fa fa-angle-up drop_on"></i>
+                  </div>
+                </div>
+                <div class="dropdown" id="slide_course">
+                  <div class="drop_cont">
+                    <ul>
+                      <li><a class="naranja" href="">Diseño</a>
+                      </li>
+                      <li><a class="celeste" href="">Fotografía</a>
+                      </li>
+                      <li><a class="verde" href="">Marketing</a>
+                      </li>
+                      <li><a class="morado" href="">Negocios</a>
+                      </li>
+                      <li><a class="violeta" href="">Emprendimiento</a>
+                      </li>
+                      <li><a class="verde_sh" href="">Música</a>
+                      </li>
+                      <li><a class="rojo" href="">Cocina</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="">Proyectos</a>
+              </li>
+              <li><a href="">Foro</a>
+              </li>
+              <li><a href="">Membresía</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hh_signup">
+            <div class="search">
+              <input type="text" placeholder="Buscar" />
+            </div>
+            <div class="hs_enter id_login"><a>Entrar</a>
+            </div>
+            <div class="hs_registro id_signup">Regístrate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="margen_banner">
+      <div class="bo_texto">
+        <div class="bt_cont">
+          <h1>Únete a una Comunidad de Aprendizaje</h1>
+
+          <h2>Aprende nuevas habilidades con nuestros cursos online y desarrolla proyectos</h2>
+        </div>
+        <div class="bt_buttons">
+          <a href="" class="bb_wrap facebook"><i class="fa fa-facebook"></i>
+
+                    <p>Regístrate con Facebook</p></a>
+          <a href="" class="bb_wrap twitter"><i class="fa fa-twitter"></i>
+
+                    <p>Regístrate con Twitter</p></a>
+        </div>
+      </div>
+      <div class="slide_down">
+        <img id="slide_down" src="{% static "img/slide_down.png" %}" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="learn_onlie" id="learn">
+    <div class="margen">
+      <div class="lo_title">
+        <h2>Aprende Online</h2>
+        <h4>Aprende donde quieras, cuando quieras y de los mejores profesionales</h4>
+      </div>
+      <div class="list_course">
+        <div class="lc_block">
+          <div class="lb_image">
+            <div class="lfb_play">
+              <div class="lfb_triangle"></div>
+            </div>
+            <img src="{% static "img/curso1.jpg" %}" alt="" />
+          </div>
+          <div class="lb_info">
+            <div class="li_title_cont">
+              <h3>Fotografía Urbana con Iphone</h3>
+            </div>
+
+            <div class="li_tutor">
+              <img src="{% static "img/tutor1.jpg" %}" alt="" />
+
+              <div class="lt_datos">
+                <h5>Gabriel Berglund</h5>
+
+                <p>Publicista</p>
+              </div>
+            </div>
+            <ul class="li_last">
+              <li>
+                <img src="{% static "img/icon_user.jpg" %}" alt="" />
+                <span>96%</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_comments.jpg" %}" alt="" />
+                <span>254</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_play.jpg" %}" alt="" />
+                <span>8</span> clases
+              </li>
+              <li>
+                <div class="price"><span>US$</span> 10.00</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lc_block">
+          <div class="lb_image">
+            <img src="{% static "img/curso2.jpg" %}" alt="" />
+            <div class="lfb_play">
+              <div class="lfb_triangle"></div>
+            </div>
+          </div>
+          <div class="lb_info">
+            <div class="li_title_cont">
+              <h3>Cómo usar Adobe Photoshop desde cero</h3>
+            </div>
+
+            <div class="li_tutor">
+              <img src="{% static "img/tutor2.jpg" %}" alt="" />
+
+              <div class="lt_datos">
+                <h5>Mallku Aragón</h5>
+
+                <p>Fotógrafo Publicitario</p>
+              </div>
+            </div>
+            <ul class="li_last">
+              <li>
+                <img src="{% static "img/icon_user.jpg" %}" alt="" />
+                <span>90%</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_comments.jpg" %}" alt="" />
+                <span>254</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_play.jpg" %}" alt="" />
+                <span>5</span> clases
+              </li>
+              <li>
+                <div class="price"><span>US$</span> 10.00</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lc_block">
+          <div class="lb_image">
+            <img src="{% static "img/curso3.jpg" %}" alt="" />
+            <div class="lfb_play">
+              <div class="lfb_triangle"></div>
+            </div>
+          </div>
+          <div class="lb_info">
+            <div class="li_title_cont">
+              <h3>Cómo preparar Cupcakes</h3>
+            </div>
+
+            <div class="li_tutor">
+              <img src="{% static "img/tutor3.jpg" %}" alt="" />
+
+              <div class="lt_datos">
+                <h5>Kelly Pazos</h5>
+
+                <p>Chef Pastelera</p>
+              </div>
+            </div>
+            <ul class="li_last">
+              <li>
+                <img src="{% static "img/icon_user.jpg" %}" alt="" />
+                <span>85%</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_comments.jpg" %}" alt="" />
+                <span>125</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_play.jpg" %}" alt="" />
+                <span>9</span> clases
+              </li>
+              <li>
+                <div class="price"><span>US$</span> 10.00</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lc_block">
+          <div class="lb_image">
+            <img src="{% static "img/curso4.jpg" %}" alt="" />
+            <div class="lfb_play">
+              <div class="lfb_triangle"></div>
+            </div>
+          </div>
+          <div class="lb_info">
+            <div class="li_title_cont">
+              <h3>Introducción a la Fotografía Digital</h3>
+            </div>
+
+            <div class="li_tutor">
+              <img src="{% static "img/tutor4.jpg" %}" alt="" />
+
+              <div class="lt_datos">
+                <h5>Vito Mirr</h5>
+
+                <p>Fotógrafo Profesional</p>
+              </div>
+            </div>
+            <ul class="li_last">
+              <li>
+                <img src="{% static "img/icon_user.jpg" %}" alt="" />
+                <span>92%</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_comments.jpg" %}" alt="" />
+                <span>254</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_play.jpg" %}" alt="" />
+                <span>8</span> clases
+              </li>
+              <li>
+                <div class="price"><span>US$</span> 10.00</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lc_block">
+          <div class="lb_image">
+            <img src="{% static "img/curso5.jpg" %}" alt="" />
+            <div class="lfb_play">
+              <div class="lfb_triangle"></div>
+            </div>
+          </div>
+          <div class="lb_info">
+            <div class="li_title_cont">
+              <h3>Cómo usar Facebook para potenciar tu negocio</h3>
+            </div>
+
+            <div class="li_tutor">
+              <img src="{% static "img/tutor5.jpg" %}" alt="" />
+
+              <div class="lt_datos">
+                <h5>Nicolás Mulder</h5>
+
+                <p>Director Ejecutivo de Mi Manzana</p>
+              </div>
+            </div>
+            <ul class="li_last">
+              <li>
+                <img src="{% static "img/icon_user.jpg" %}" alt="" />
+                <span>96%</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_comments.jpg" %}" alt="" />
+                <span>210</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_play.jpg" %}" alt="" />
+                <span>5</span> clases
+              </li>
+              <li>
+                <div class="price"><span>US$</span> 10.00</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lc_block">
+          <div class="lb_image">
+            <img src="{% static "img/curso6.jpg" %}" alt="" />
+            <div class="lfb_play">
+              <div class="lfb_triangle"></div>
+            </div>
+          </div>
+          <div class="lb_info">
+            <div class="li_title_cont">
+              <h3>11 Consejos para Emprender</h3>
+            </div>
+
+            <div class="li_tutor">
+              <img src="{% static "img/tutor6.jpg" %}" alt="" />
+
+              <div class="lt_datos">
+                <h5>Gonzalo Velasco</h5>
+
+                <p>Emprendedor de Profesión</p>
+              </div>
+            </div>
+            <ul class="li_last">
+              <li>
+                <img src="{% static "img/icon_user.jpg" %}" alt="" />
+                <span>97%</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_comments.jpg" %}" alt="" />
+                <span>254</span>
+              </li>
+              <li>
+                <img src="{% static "img/icon_play.jpg" %}" alt="" />
+                <span>8</span> clases
+              </li>
+              <li>
+                <div class="price"><span>US$</span> 10.00</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about_course">
+    <div class="margen">
+      <h3>¿Qué incluyen nuestros cursos?</h3>
+
+      <div class="list_feature">
+        <div class="lf_linea">
+          <div class="lf_block">
+            <img src="{% static "img/feature1.jpg" %}" alt="" />
+
+            <div class="lf_texto">
+              <h5>Videocursos paso a paso</h5>
+
+              <p>Contenidos 100% Online. Videos de alta calidad que podrás ver cuantas veces quieras a la hora que quieras</p>
+            </div>
+          </div>
+          <div class="lf_block">
+            <img src="{% static "img/feature2.jpg" %}" alt="" />
+
+            <div class="lf_texto">
+              <h5>Acceso ilimitado</h5>
+
+              <p>Los cursos nunca expirarán y están disponibles las 24 horas del día sin ninguna restricción.
+              </p>
+            </div>
+          </div>
+          <div class="lf_block">
+            <img src="{% static "img/feature3.jpg" %}" alt="" />
+
+            <div class="lf_texto">
+              <h5>Disponibilidad total</h5>
+
+              <p>Puedes tomar tus cursos desde cualquier dispositivo telefono, tablet, o computador, incluso desde varios a la vez.</p>
+            </div>
+          </div>
+          <div class="lf_block">
+            <img src="{% static "img/feature4.jpg" %}" alt="" />
+
+            <div class="lf_texto">
+              <h5>Certificaciones</h5>
+
+              <p>Cuando completes el 100% de tu curso, te daremos acceso a tu certificación validadas por nuestros partners educativos.</p>
+            </div>
+          </div>
+          <div class="lf_block">
+            <img src="{% static "img/feature5.jpg" %}" alt="" />
+
+            <div class="lf_texto">
+              <h5>Respuesta a todas tus preguntas</h5>
+
+              <p>Con nosotros tendrás respuesta casi inmediata a cualquier duda que tengas.</p>
+            </div>
+          </div>
+          <div class="lf_block">
+            <img src="{% static "img/feature6.jpg" %}" alt="" />
+
+            <div class="lf_texto">
+              <h5>Proyecto Personal</h5>
+
+              <p>Al finalizar cada curso, realizarás un proyecto personal que será compartido y valorado por toda la comunidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="learn_create">
+    <div class="margen">
+      <div class="lc_title">
+        <h2>Aprende Creando</h2>
+        <h4>Proyectos publicados por nuestros Alumnos</h4>
+      </div>
+      <div class="list_project">
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn1.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Capturando la Naturaleza</h5>
+
+              <p>Andrea Saravia</p>
+
+              <p class="lt_last">Cómo tomar retratos al aire libre</p>
+            </div>
+          </div>
+        </div>
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn2.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Retratos Digitales</h5>
+
+              <p>Fernando Céspedes</p>
+
+              <p class="lt_last">Ilustración Digital desde cero</p>
+            </div>
+          </div>
+        </div>
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn3.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Fotografía + Pintura</h5>
+
+              <p>Lorena Lau</p>
+
+              <p class="lt_last">Técnicas de Pintura Digital</p>
+            </div>
+          </div>
+        </div>
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn4.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Vistas en Ciudades</h5>
+
+              <p>Rodrigo Perez</p>
+
+              <p class="lt_last">Fotomontaje y Retoque Fotográfico</p>
+            </div>
+          </div>
+        </div>
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn5.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Dibujando Letras</h5>
+
+              <p>Karen Cueva</p>
+
+              <p class="lt_last">Introducción al Lettering</p>
+            </div>
+          </div>
+        </div>
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn6.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Percepciones</h5>
+
+              <p>Alberto Segovia</p>
+
+              <p class="lt_last">Fotografía en Blanco y Negro</p>
+            </div>
+          </div>
+        </div>
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn7.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Flashbacks</h5>
+
+              <p>María Jose Vega</p>
+
+              <p class="lt_last">Composición Fotográfica para Moda</p>
+            </div>
+          </div>
+        </div>
+        <div class="lp_block">
+          <ul class="lp_favorite">
+            <li><img src="{% static "img/icon_heart.png" %}" alt="" /> <span>38</span>
+            </li>
+            <li><img src="{% static "img/icon_chat.png" %}" alt="" /> <span>14</span>
+            </li>
+          </ul>
+          <div class="lp_image">
+            <img src="{% static "img/learn8.jpg" %}" alt="" />
+          </div>
+          <div class="lp_info">
+            <div class="li_photo">
+              <img src="{% static "img/mensaje.png" %}" alt="" />
+            </div>
+            <div class="li_texto">
+              <h5>Retro</h5>
+
+              <p>Francesco Bernasconi</p>
+
+              <p class="lt_last">Aprenda todo sobre Lightroom 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="comment">
+    <div class="margen">
+      <h2>Nuestros alumnos nos aman</h2>
+
+      <div id="slider3">
+        <div class="viewport">
+          <ul class="overview">
+            <li>
+              <div class="c_texto">
+                <div class="ct_photo">
+                  <img src="{% static "img/mensaje.png" %}" alt="" />
+                </div>
+                <div class="ct_message">
+                  <div class="cm_text"><img class="c_f" src="{% static "img/comilla_f.png" %}" alt="" />En Flikn pude aprender técnicas de diseño gráfico de manera práctica, lo cual me ayudo a desarrollar mi creatividad y realizar proyectos personales.
+                    <img class="c_l" src="{% static "img/comilla_l.png" %}" alt="" />
+                  </div>
+                  <div class="cm_name">PAULA OYOLA, LIMA-PERÚ</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="c_texto">
+                <div class="ct_photo">
+                  <img src="{% static "img/mensaje.png" %}" alt="" />
+                </div>
+                <div class="ct_message">
+                  <div class="cm_text"><img class="c_f" src="{% static "img/comilla_f.png" %}" alt="" />En Flikn pude aprender técnicas de diseño gráfico de manera práctica, lo cual me ayudo a desarrollar mi creatividad y realizar proyectos personales.
+                    <img class="c_l" src="{% static "img/comilla_l.png" %}" alt="" />
+                  </div>
+                  <div class="cm_name">PAULA OYOLA, LIMA-PERÚ</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="c_texto">
+                <div class="ct_photo">
+                  <img src="{% static "img/mensaje.png" %}" alt="" />
+                </div>
+                <div class="ct_message">
+                  <div class="cm_text"><img class="c_f" src="{% static "img/comilla_f.png" %}" alt="" />En Flikn pude aprender técnicas de diseño gráfico de manera práctica, lo cual me ayudo a desarrollar mi creatividad y realizar proyectos personales.
+                    <img class="c_l" src="{% static "img/comilla_l.png" %}" alt="" />
+                  </div>
+                  <div class="cm_name">PAULA OYOLA, LIMA-PERÚ</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="c_texto">
+                <div class="ct_photo">
+                  <img src="{% static "img/mensaje.png" %}" alt="" />
+                </div>
+                <div class="ct_message">
+                  <div class="cm_text"><img class="c_f" src="{% static "img/comilla_f.png" %}" alt="" />En Flikn pude aprender técnicas de diseño gráfico de manera práctica, lo cual me ayudo a desarrollar mi creatividad y realizar proyectos personales.
+                    <img class="c_l" src="{% static "img/comilla_l.png" %}" alt="" />
+                  </div>
+                  <div class="cm_name">PAULA OYOLA, LIMA-PERÚ</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="c_texto">
+                <div class="ct_photo">
+                  <img src="{% static "img/mensaje.png" %}" alt="" />
+                </div>
+                <div class="ct_message">
+                  <div class="cm_text"><img class="c_f" src="{% static "img/comilla_f.png" %}" alt="" />En Flikn pude aprender técnicas de diseño gráfico de manera práctica, lo cual me ayudo a desarrollar mi creatividad y realizar proyectos personales.
+                    <img class="c_l" src="{% static "img/comilla_l.png" %}" alt="" />
+                  </div>
+                  <div class="cm_name">PAULA OYOLA, LIMA-PERÚ</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="c_texto">
+                <div class="ct_photo">
+                  <img src="{% static "img/mensaje.png" %}" alt="" />
+                </div>
+                <div class="ct_message">
+                  <div class="cm_text"><img class="c_f" src="{% static "img/comilla_f.png" %}" alt="" />En Flikn pude aprender técnicas de diseño gráfico de manera práctica, lo cual me ayudo a desarrollar mi creatividad y realizar proyectos personales.
+                    <img class="c_l" src="{% static "img/comilla_l.png" %}" alt="" />
+                  </div>
+                  <div class="cm_name">PAULA OYOLA, LIMA-PERÚ</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <ul class="bullets">
+          <li>
+            <a href="#" class="bullet active" data-slide="0"></a>
+          </li>
+          <li>
+            <a href="#" class="bullet" data-slide="1"></a>
+          </li>
+          <li>
+            <a href="#" class="bullet" data-slide="2"></a>
+          </li>
+          <li>
+            <a href="#" class="bullet" data-slide="3"></a>
+          </li>
+          <li>
+            <a href="#" class="bullet" data-slide="4"></a>
+          </li>
+          <li>
+            <a href="#" class="bullet" data-slide="5"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="sponsors">
+    <div class="margen">
+      <h2>Confían en Nosotros</h2>
+      <ul class="s_list">
+        <li>
+          <a class="sl_img1" href="">
+            <img class="sl_off" src="{% static "img/sponsor1.png" %}" alt="" />
+            <img class="sl_on" src="{% static "img/marca1.png" %}" alt="" />
+          </a>
+        </li>
+        <li>
+          <a class="sl_img2" href="">
+            <img class="sl_off" src="{% static "img/sponsor2.png" %}" alt="" />
+            <img class="sl_on" src="{% static "img/marca2.png" %}" alt="" />
+          </a>
+        </li>
+        <li>
+          <a class="sl_img3" href="">
+            <img class="sl_off" src="{% static "img/sponsor3.png" %}" alt="" />
+            <img class="sl_on" src="{% static "img/marca3.png" %}" alt="" />
+          </a>
+        </li>
+        <li>
+          <a class="sl_img4" href="">
+            <img class="sl_off" src="{% static "img/sponsor4.png" %}" alt="" />
+            <img class="sl_on" src="{% static "img/marca4.png" %}" alt="" />
+          </a>
+        </li>
+        <li>
+          <a class="sl_img5" href="">
+            <img class="sl_off" src="{% static "img/sponsor5.png" %}" alt="" />
+            <img class="sl_on" src="{% static "img/marca5.png" %}" alt="" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="see_video">
+    <div class="margen">
+      <h3><i class="fa fa-quote-left"></i>Con Flikn aprendí a potenciar mi creatividad <i class="fa fa-quote-right"></i></h3>
+      <h4>- Paola Linares, Alumna de Flikn</h4>
+      <a href="" class="trans_btn">VER VIDEO</a>
+    </div>
+  </div>
+  <div class="see_courses">
+    <div class="margen">
+      <ul class="sc_content">
+        <li class="sc_text">¿Estás listo para aprender?</li>
+        <li class="sc_button"><a href="">VER CURSOS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="margen">
+      <ul class="f_list">
+        <li class="fl_inline">
+          <ul class="fi_block">
+            <li class="fb_head">Nosotros</li>
+            <li><a href="">Sobre Flikn</a>
+            </li>
+            <li><a href="">Equipo</a>
+            </li>
+            <li><a href="">Prensa</a>
+            </li>
+            <li><a href="">Ayuda</a>
+            </li>
+            <li><a href="">Términos y Condiciones</a>
+            </li>
+          </ul>
+        </li>
+        <li class="fl_inline">
+          <ul class="fi_block">
+            <li class="fb_head">Comunidad</li>
+            <li><a href="">Enseña</a>
+            </li>
+            <li><a href="">Foro</a>
+            </li>
+            <li><a href="">Membresía</a>
+            </li>
+            <li><a href="">Empresas</a>
+            </li>
+            <li><a href="">Certificaciones</a>
+            </li>
+          </ul>
+        </li>
+        <li class="fl_inline">
+          <ul class="fi_block">
+            <li class="fb_head">Categorías</li>
+            <li><a href="">Diseño</a>
+            </li>
+            <li><a href="">Fotografía</a>
+            </li>
+            <li><a href="">Marketing</a>
+            </li>
+            <li><a href="">Negocios</a>
+            </li>
+            <li><a href="">Emprendimiento</a>
+            </li>
+            <li><a href="">Música</a>
+            </li>
+            <li><a href="">Cocina</a>
+            </li>
+          </ul>
+        </li>
+        <li class="fl_inline">
+          <ul class="fi_block">
+            <li class="fb_head">Conversa con Nosotros</li>
+            <li><a href=""><i class="fa fa-facebook"></i> flikncom</a>
+            </li>
+            <li><a href=""><i class="fa fa-twitter"></i> @fliknoficial</a>
+            </li>
+            <li><a href=""><i class="fa fa-envelope"></i> hola@flikn.com</a>
+            </li>
+            <li><a href=""><i class="fa fa-phone"></i> (51) 2702584</a>
+            </li>
+            <li>
+              <div class="li_coin">
+                <p>Moneda</p>
+                <p class="select" id="coins">US$</p>
+                <div class="dropdown" id="dd_coins">
+                  <div class="dd_cont">
+                    <ul class="dd_list">
+                      <li><a class="active" href=""><span>US$</span> Dólar americano</a>
+                      </li>
+                      <li><a href=""><span>€</span> Euro</a>
+                      </li>
+                      <li><a href=""><span>S/.</span> Sol peruano</a>
+                      </li>
+                      <li><a href=""><span>MX$</span> Peso mexicano</a>
+                      </li>
+                      <li><a href=""><span>CO$</span> Peso colombiano</a>
+                      </li>
+                      <li><a href=""><span>CH$</span> Peso chileno</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="f_last">
+        <ul class="fl_texto">
+          <li>Legal</li>
+          <li>© Flikn 2014</li>
+          <li>Todos los derechos reservados</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+
+{% endblock content %}
+
+{% block js %}
+{{ block.super }}
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#slider3").tinycarousel({
+    bullets: true
+  });
+});
+</script>
+
+<script type="text/javascript" src="{% static "js/tiny.carousel.js" %}"></script>
+
+{% endblock js %}
