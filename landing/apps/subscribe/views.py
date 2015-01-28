@@ -8,7 +8,7 @@ from .models import Subscriptor
 URL = "http://198.143.158.218:28080/ZonaDelSaber/validarCliente.action"
 
 
-def subscribe_view(request):
+def subscribe_api_view(request):
     data = {}
 
     if request.method == "POST":
