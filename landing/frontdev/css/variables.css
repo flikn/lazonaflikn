@@ -1,0 +1,51 @@
+/**breakpoints **/
+/************* colors ***********/
+/************* fonts ************/
+@font-face {
+  font-family: ssp_black;
+  src: url(../../fonts/SourceSansPro-Black.ttf);
+}
+@font-face {
+  font-family: ssp_blackitalic;
+  src: url(../../fonts/SourceSansPro-BlackItalic.ttf);
+}
+@font-face {
+  font-family: ssp_bold;
+  src: url(../../fonts/SourceSansPro-Bold.ttf);
+}
+@font-face {
+  font-family: ssp_bolditalic;
+  src: url(../../fonts/SourceSansPro-BoldItalic.ttf);
+}
+@font-face {
+  font-family: ssp_exlight;
+  src: url(../../fonts/SourceSansPro-ExtraLight.ttf);
+}
+@font-face {
+  font-family: ssp_exlightitalic;
+  src: url(../../fonts/SourceSansPro-ExtraLightItalic.ttf);
+}
+@font-face {
+  font-family: ssp_italic;
+  src: url(../../fonts/SourceSansPro-Italic.ttf);
+}
+@font-face {
+  font-family: ssp_light;
+  src: url(../../fonts/SourceSansPro-Light.ttf);
+}
+@font-face {
+  font-family: ssp_lightitalic;
+  src: url(../../fonts/SourceSansPro-LightItalic.ttf);
+}
+@font-face {
+  font-family: ssp_regular;
+  src: url(../../fonts/SourceSansPro-Regular.ttf);
+}
+@font-face {
+  font-family: ssp_semibold;
+  src: url(../../fonts/SourceSansPro-Semibold.ttf);
+}
+@font-face {
+  font-family: ssp_semibolditalic;
+  src: url(../../fonts/SourceSansPro-SemiboldItalic.ttf);
+}

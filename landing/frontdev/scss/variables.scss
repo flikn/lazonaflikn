@@ -1,0 +1,90 @@
+/**breakpoints **/
+$breakpoint480: 'max-width: 480px';
+$breakpoint580: 'max-width: 580px';
+$breakpoint768: 'max-width: 768px';
+$breakpoint992: 'max-width: 992px';
+$breakpoint1200: 'max-width: 1200px';
+$breakpoint1500: 'max-width: 1500px';
+
+/************* colors ***********/
+
+$naranja: #f2672c;
+$hover_naranja: #e2642c;
+$facebook: #3b579d;
+$twitter: #55acee;
+$linkedin: #007bb6;
+$title: #303030;
+$title_claro: rgb(70,70,70);
+$verde_agua: #27778f;
+$celeste: #7ac9d5;
+$verde: #3aad3f;
+$morado: #6865ed;
+$violeta: #c43369;
+$verde_sh: #23748d;
+$rojo: #ed656c;
+
+/************* fonts ************/
+
+@font-face {
+  font-family: ssp_black;
+  src: url(/static/fonts/SourceSansPro-Black.ttf);
+}
+@font-face {
+  font-family: ssp_blackitalic;
+  src: url(/static/fonts/SourceSansPro-BlackItalic.ttf);
+}
+@font-face {
+  font-family: ssp_bold;
+  src: url(/static/fonts/SourceSansPro-Bold.ttf);
+}
+@font-face {
+  font-family: ssp_bolditalic;
+  src: url(/static/fonts/SourceSansPro-BoldItalic.ttf);
+}
+@font-face {
+  font-family: ssp_exlight;
+  src: url(/static/fonts/SourceSansPro-ExtraLight.ttf);
+}
+@font-face {
+  font-family: ssp_exlightitalic;
+  src: url(/static/fonts/SourceSansPro-ExtraLightItalic.ttf);
+}
+@font-face {
+  font-family: ssp_italic;
+  src: url(/static/fonts/SourceSansPro-Italic.ttf);
+}
+@font-face {
+  font-family: ssp_light;
+  src: url(/static/fonts/SourceSansPro-Light.ttf);
+}
+@font-face {
+  font-family: ssp_lightitalic;
+  src: url(/static/fonts/SourceSansPro-LightItalic.ttf);
+}
+@font-face {
+  font-family: ssp_regular;
+  src: url(/static/fonts/SourceSansPro-Regular.ttf);
+}
+@font-face {
+  font-family: ssp_semibold;
+  src: url(/static/fonts/SourceSansPro-Semibold.ttf);
+}
+@font-face {
+  font-family: ssp_semibolditalic;
+  src: url(/static/fonts/SourceSansPro-SemiboldItalic.ttf);
+}
+
+$ssp_black: ssp_black;
+$ssp_blackitalic: ssp_blackitalic;
+$ssp_bold: ssp_bold;
+$ssp_bolditalic: ssp_bolditalic;
+$ssp_exlight: ssp_exlight;
+$ssp_exlightitalic: ssp_exlightitalic;
+$ssp_italic: ssp_italic;
+$ssp_light: ssp_light;
+$ssp_lightitalic: ssp_lightitalic;
+$ssp_regular: ssp_regular;
+$ssp_semibold: ssp_semibold;
+$ssp_semibolditalic: ssp_semibolditalic;
+
+
