@@ -1,6 +1,5 @@
 from django.conf.urls import patterns, url
 from .views import HomeView, LoginView, SignupView, SubscribeView
-from .views import ThanksView
 
 
 urlpatterns = patterns(
