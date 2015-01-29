@@ -83,10 +83,6 @@
               </p>
             </div>
 
-            <figure>
-              <img src="{% static "img/logo_movistar.png" %}" width="200">
-            </figure>
-            
             <div class="pc_login">
               <p>
                 ¿No tienes una cuenta? <a href="{% url 'home_app:signup' %}">Regístrate</a>
@@ -95,6 +91,13 @@
 
           </div>
         </div>
+
+        <div class="cv_footer">
+          <figure>
+            <img src="{% static "img/logo_movistar.png" %}" width="103">
+          </figure> 
+        </div> 
+
       </div>
 
       {% include "home/banner.html" %}
