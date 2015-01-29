@@ -43,20 +43,27 @@
 
   <div class="check_out">
     <div class="co_margen">
+    
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        Regístrate ahora y disfruta de <strong>3 meses gratis</strong>.
+        Beneficio exclusivo para clientes de Movistar Internet
+      </div>
+
       <div class="co_variable">
         <div class="cv_head">
           <div class="ch_title">1. Iniciar Sesión</div>
-          <div class="ch_title ct_second">2. Ingresa Usuario Movistar</div>
+          <div class="ch_title ct_second">2. Ingresa Código Movistar</div>
         </div>
         <div class="cv_body">
           <div class="star_session">
             <div class="pc_buttons">
-              <a href="" class="facebook"><i class="fa fa-facebook"></i>
-
-                              <p>Ingresa con Facebook</p></a>
-              <a href="" class="twitter"><i class="fa fa-twitter"></i>
-
-                              <p>Ingresa con Twitter</p></a>
+              <a href="" class="facebook">
+                <i class="fa fa-facebook"></i><p>Ingresa con Facebook</p>
+              </a>
+              <a href="" class="twitter">
+                <i class="fa fa-twitter"></i><p>Ingresa con Twitter</p>
+              </a>
             </div>
             <div class="pc_line">
               <p>O</p>
@@ -66,7 +73,7 @@
               <input type="password" placeholder="Contraseña" />
               <a href="" class="password">¿Olvidaste tu contraseña?</a>
             </div>
-            <a href="/subscribe" class="btn_naranja">Iniciar Sesión</a>
+            <a href="{% url 'home_app:subscribe' %}" class="btn_naranja">Iniciar Sesión</a>
 
             <div class="remember_info">
               <input type="checkbox" id="remember" />
@@ -75,10 +82,17 @@
                 <label for="remember">Recordar mis datos</label>
               </p>
             </div>
+
+            <figure>
+              <img src="{% static "img/logo_movistar.png" %}" width="200">
+            </figure>
+            
             <div class="pc_login">
-              <p>¿No tienes una cuenta? <a href="/signup/">Regístrate</a>
+              <p>
+                ¿No tienes una cuenta? <a href="{% url 'home_app:signup' %}">Regístrate</a>
               </p>
             </div>
+
           </div>
         </div>
       </div>

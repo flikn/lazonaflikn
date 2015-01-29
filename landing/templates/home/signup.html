@@ -42,10 +42,17 @@
 
   <div class="check_out">
     <div class="co_margen">
+      
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        Regístrate ahora y disfruta de <strong>3 meses gratis</strong>.
+        Beneficio exclusivo para clientes de Movistar Internet
+      </div>
+
       <div class="co_variable">
         <div class="cv_head">
-          <div class="ch_title">1. Iniciar Sesión</div>
-          <div class="ch_title ct_second">2. Ingresa Usuario Movistar</div>
+          <div class="ch_title">1. Registrate</div>
+          <div class="ch_title ct_second">2. Ingresa Código Movistar</div>
         </div>
         <div class="cv_body">
           <div class="star_session">
@@ -68,15 +75,20 @@
               <input type="text" placeholder="Correo electrónico" />
               <input type="password" placeholder="Contraseña" />
             </div>
-            <a href="/subscribe/" class="btn_naranja">Regístrate</a>
+            <a href="{% url 'home_app:subscribe' %}" class="btn_naranja">Regístrate</a>
+
+            <figure>
+              <img src="{% static "img/logo_movistar.png" %}" width="200">
+            </figure>
 
             <div class="term_condition">
               <p>Al registrarte estarás aceptando nuestros <a href="">Términos y Condiciones</a> y <a href="">Políticas de Privacidad</a>.</p>
             </div>
             <div class="pc_login">
-              <p>¿Ya tienes una cuenta? <a href="/login/">Inicia sesión</a>
+              <p>¿Ya tienes una cuenta? <a href="{% url 'home_app:login' %}">Inicia sesión</a>
               </p>
             </div>
+
           </div>
         </div>
       </div>

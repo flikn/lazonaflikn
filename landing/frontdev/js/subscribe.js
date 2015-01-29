@@ -1,8 +1,11 @@
 var csrftoken = $.cookie('csrftoken');
 
-$("#button").unbind('click').click(function() {
-  event.preventDefault();
 
+$(document).ready(function() {
+  $("#message").css('visibility', 'hidden');
+});
+
+$("#button").unbind('click').click(function() {
   var client = $("#client").val();
   var account = $("#account").val();
   var data = {
@@ -20,23 +23,30 @@ $("#button").unbind('click').click(function() {
       console.log(data);
 
       var message = "";
+      var type_alert = "";
 
       switch (data.code) {
         case 200:
-          message = '<p><i class="fa fa-check-circle"></i> Cliente válido</p>'
+          message = '<p><i class="fa fa-check-circle"></i> Cliente válido.</p>'
+          type_alert = "alert alert-success";
           break;
         case 500:
-          message = '<p><i class="fa fa-thumbs-down"></i> Cliente NO válido</p>'
+          message = '<p><i class="fa fa-thumbs-down"></i> Cliente no válido.</p>'
+          type_alert = "alert alert-danger";
           break;
         case 403:
-          message = '<p><i class="fa fa-lock"></i> Este Cliente ya fue validado</p>'
+          message = '<p><i class="fa fa-lock"></i> Este cliente ya fue validado 3 veces.</p>'
+          type_alert = "alert alert-warning";
           break;
         default: //400
-          message = '<p><i class="fa fa-times"></i> Sintaxis no válida</p>'
+          message = '<p><i class="fa fa-times"></i> Sintaxis no válida.</p>'
+          type_alert = "alert alert-danger";
           break;
       }
 
       $('#message').html(message);
+      $("#message").css('visibility', 'visible');
+      $("#message").attr("class", type_alert);
 
       // Redirect.
       if (data.code == 200) {

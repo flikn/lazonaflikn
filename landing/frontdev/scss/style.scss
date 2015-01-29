@@ -5708,6 +5708,7 @@ button, input, textarea, select {
               }
               .btn_naranja {
                 padding: 7px 20px;
+                cursor: pointer;
                 @include transition(.3s);
                 &:hover {
                   background-color: $hover_naranja;
@@ -14831,4 +14832,14 @@ ul.tagit input[type="text"] {
 @keyframes a_state {
   0% {width: 0}
   100% {width: 100%}
+}
+
+.btn_naranja {
+  cursor: pointer;
+  @include transition(.3s);
+  &:hover {
+    background-color: $hover_naranja;
+    color: $yellow;
+    text-decoration: none;
+  }
 }

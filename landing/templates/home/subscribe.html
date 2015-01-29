@@ -44,11 +44,13 @@
   <div class="check_out">
     <div class="co_margen">
 
+      <div class="alert alert-success" role="alert" id="message"></div>
+
       <div class="co_variable">
         <div class="cv_head">
           <div class="ch_title ct_first">1. Iniciar Sesión <img src="{% static "img/empresa_check.png" %}" alt="" />
           </div>
-          <div class="ch_title">2. Ingresa Usuario Movistar</div>
+          <div class="ch_title">2. Ingresa Código Movistar</div>
         </div>
         <div class="cv_body">
 
@@ -56,30 +58,55 @@
           
           <form class="pc_inputs" role="form" method="POST">
             {% csrf_token %}
-            <label for="client">Cliente</label>
+            <label for="client">Código Cliente</label>
             <input type="text" name="client" id="client" placeholder="Ingrese su # de cliente movistar" />
             
-            <label for="account">Cuenta</label>
+            <label for="account">Código Cuenta</label>
             <input type="text" name="account" id="account" placeholder="Ingrese su # de cuenta movistar" />
           </form>
           
-          <a id="button" class="btn_naranja">Obtener descuento!</a>
+          <a id="button" class="btn_naranja">Obtén beneficio Movistar!</a>
 
-          <article>
-            <br>
-            <br>
-            <h3 id="message">
-            </h3>
-            <br>
-            <br>
-          </article>
-          
+          <br><br>  
+
           <div class="pc_line">
             <p>O</p>
           </div>
+
+          <figure>
+            <img src="{% static "img/logo_movistar.png" %}" width="200">
+          </figure>
           
           <div class="term_condition">
             <p>Al registrarte estarás aceptando nuestros <a href="">Términos y Condiciones</a> y <a href="">Políticas de Privacidad</a>.</p>
+          </div>
+
+          <div class="pc_login">
+            <p id="movistar_receipt">
+              <!-- Button trigger modal -->
+              <a href="#" data-toggle="modal" data-target="#myModal">
+                ¿No tienes idea donde encontrar tu código de cliente y cuenta en tu recibo de pago?
+                <strong>Averígualo aquí</strong>
+              </a>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Encuentra tu código de cliente y cuenta en tu recibo de pago Movistar.</h4>
+                    </div>
+                    <div class="modal-body">
+                      <img src="{% static "img/recibo.png" %}">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </p>
+
           </div>
 
           </div>
