@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.org/flikn/lazonaflikn.svg?branch=develop)](https://travis-ci.org/flikn/lazonaflikn)
+[![Build Status](https://travis-ci.org/flikn/lazonaflikn.svg?branch=master)](https://travis-ci.org/flikn/lazonaflikn)
 
 # La Zona del Saber - Flikn
