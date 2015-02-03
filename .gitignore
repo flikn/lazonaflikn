@@ -1,6 +1,5 @@
 # Development static and media files
 landing/static/
-staticfiles/
 media
 
 # Redis 
