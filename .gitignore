@@ -1,6 +1,9 @@
 # Development static and media files
 landing/static/
 media
+package.json
+gulpfile.json
+bower.json
 
 # Redis 
 dump.rdb
