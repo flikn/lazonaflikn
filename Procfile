@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath landing landing.wsgi --log-file -
