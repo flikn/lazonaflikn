@@ -15,10 +15,11 @@ class Migration(migrations.Migration):
             name='Subscriptor',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('client', models.CharField(max_length=100)),
-                ('account', models.CharField(max_length=100)),
+                ('client', models.BigIntegerField()),
+                ('account', models.BigIntegerField()),
                 ('date_created', models.DateTimeField(default=django.utils.timezone.now)),
-                ('coupon_used', models.CharField(max_length=100)),
+                ('lifetime', models.PositiveSmallIntegerField(default=3)),
+                ('is_active', models.BooleanField(default=True)),
             ],
             options={
                 'db_table': 'subscriptor',

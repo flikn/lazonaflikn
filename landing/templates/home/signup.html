@@ -43,11 +43,18 @@
   <div class="check_out">
     <div class="co_margen">
       
+      {% if not message %}
       <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         Regístrate ahora y disfruta de <strong>3 meses gratis</strong>.
         Beneficio exclusivo para clientes de Movistar Internet
       </div>
+      {% else %}
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <i class="fa fa-lock"></i> {{ message }}
+      </div>
+      {% endif %}
 
       <div class="co_variable">
         
@@ -59,10 +66,10 @@
         <div class="cv_body">
           <div class="star_session">
             <div class="pc_buttons">
-              <a href="" class="facebook">
+              <a href="{% url 'social:begin' 'facebook' %}" class="facebook">
                 <i class="fa fa-facebook"></i><p>Regístrate con Facebook</p>
               </a>
-              <a href="" class="twitter">
+              <a href="{% url 'social:begin' 'twitter' %}" class="twitter">
                 <i class="fa fa-twitter"></i><p>Regístrate con Twitter</p>
               </a>
             </div>
@@ -70,14 +77,18 @@
               <p>O</p>
             </div>
             <div class="pc_inputs">
-              <div class="pi_inline">
-                <input type="text" placeholder="Nombre" />
-                <input type="text" placeholder="Apellido" />
-              </div>
-              <input type="text" placeholder="Correo electrónico" />
-              <input type="password" placeholder="Contraseña" />
+              <form action="" method="POST">
+                {% csrf_token %}
+                <div class="pi_inline">
+                  <input type="text" name="first_name" placeholder="Nombre" required/>
+                  <input type="text" name="last_name" placeholder="Apellido" required/>
+                </div>
+                <input type="email" name="email" placeholder="Correo electrónico" required/>
+                <input type="password" minlength="6" name="password" placeholder="Contraseña" required/>
+
+                <button class="btn_naranja" type="submit">Regístrate</button>
+              </form>
             </div>
-            <a href="{% url 'home_app:subscribe' %}" class="btn_naranja">Regístrate</a>
 
             <div class="term_condition">
               <p>Al registrarte estarás aceptando nuestros <a href="">Términos y Condiciones</a> y <a href="">Políticas de Privacidad</a>.</p>

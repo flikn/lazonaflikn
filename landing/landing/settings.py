@@ -29,8 +29,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'apps.subscribe',
     'apps.home',
+    'apps.customuser',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,6 +107,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
     "django.core.context_processors.request",
+    "social.apps.django_app.context_processors.backends",
+    "social.apps.django_app.context_processors.login_redirect",
 )
 
 TEMPLATE_LOADERS = (
@@ -120,3 +124,35 @@ if DEBUG:
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+# Custom User Model
+AUTH_USER_MODEL = 'customuser.MyUser'
+SOCIAL_AUTH_USER_MODEL = AUTH_USER_MODEL
+DEFAULT_AUTHENTICATION_BACKEND = 'apps.customuser.backends.EmailBackend'
+
+# Python social auth.
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'apps.customuser.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/subscribe/'
+LOGIN_URL = '/login/'
+
+SOCIAL_AUTH_TWITTER_KEY = os.environ.get(
+    'SOCIAL_AUTH_TWITTER_KEY', ' '
+)
+SOCIAL_AUTH_TWITTER_SECRET = os.environ.get(
+    'SOCIAL_AUTH_TWITTER_SECRET', ' '
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get(
+    'SOCIAL_AUTH_FACEBOOK_KEY', ' '
+)
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get(
+    'SOCIAL_AUTH_FACEBOOK_SECRET', ' '
+)
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']

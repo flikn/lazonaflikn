@@ -14844,6 +14844,11 @@ ul.tagit input[type="text"] {
   }
 }
 
+button.btn_naranja {
+  width: 100%;
+  text-align: right;
+}
+
 .cv_footer {
   border: 2px solid; 
   border-color: rgb(235,235,235);
@@ -14851,4 +14856,9 @@ ul.tagit input[type="text"] {
   figure {
     margin: 12px 16px 10px 16px;
   }
+}
+
+label.movistar_code{
+  font-family: ssp_regular; 
+  color: #545454;
 }

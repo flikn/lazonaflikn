@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="menu_responsive">
+  <div class="mr_content">
+    <input class="search_i" placeholder="Buscar" type="text" />
+    <ul class="mc_list">
+      <li>
+        <a href="">Cursos</a>
+        <ul class="ml_sublist">
+          <li><a href="">Diseño</a>
+          </li>
+          <li><a href="">Fotografía</a>
+          </li>
+          <li><a href="">Marketing</a>
+          </li>
+          <li><a href="">Negocios</a>
+          </li>
+          <li><a href="">Emprendimiento</a>
+          </li>
+          <li><a href="">Música</a>
+          </li>
+          <li><a href="">Cocina</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="">Proyectos</a>
+      </li>
+      <li><a href="">Foros</a>
+      </li>
+      <li><a href="">Membresía</a>
+      </li>
+      <li><a href="">Invita a un Amigo</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  {% include "home/header.html" %}
+
+  <div class="check_out">
+    
+    <section class="thanks-message">
+      <h1>¡Gracias por unirte a nuestra comunidad!</h1>
+      <h2>En el transcurso del día te estaremos enviando <br>
+      un correo con tu cuenta.</h2>
+    </section>
+    <figure>
+      <img src="{% static 'img/thanks.png' %}" class="thanks-image" alt="thanks">
+    </figure>
+
+    <section class="thanks-message">
+      <a type="button" class="btn btn-info btn-lg" href="http://www.flikn.com/cursos/todos/nuevos">
+        Ver Cursos
+      </a>
+    </section>
+
+  </div>
+
+</div>
+
+{% endblock content %}
+
+{% block js %}
+  {{ block.super }}
+  <script src="{% static "js/jquery.cookie.js" %}"></script>
+  <script src="{% static "js/subscribe.js" %}"></script>
+{% endblock js %}
