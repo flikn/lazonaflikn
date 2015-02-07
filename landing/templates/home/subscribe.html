@@ -58,10 +58,10 @@
           <div class="star_session">
             <form class="pc_inputs" role="form" method="POST">
               {% csrf_token %}
-              <label for="client">Código Cliente</label>
+              <label class="movistar_code" for="client">Código Cliente</label>
               <input type="text" name="client" id="client" placeholder="Ingrese su # de cliente movistar" />
               
-              <label for="account">Código Cuenta</label>
+              <label class="movistar_code" for="account">Código Cuenta</label>
               <input type="text" name="account" id="account" placeholder="Ingrese su # de cuenta movistar" />
             </form>
             

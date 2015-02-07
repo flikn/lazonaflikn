@@ -1,0 +1,23 @@
+.thanks-image {
+  max-width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thanks-message {
+  text-align: center;
+  h1 {
+    font-size: 42px;
+    font-family: ssp_regular; 
+    color: #FF7900;
+  }
+  h2 {
+    font-size: 30px;
+    font-family: ssp_light; 
+    color: #515151;
+  }
+  a {
+    padding: 10px 74px;
+  }
+}

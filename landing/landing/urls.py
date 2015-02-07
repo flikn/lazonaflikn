@@ -11,4 +11,6 @@ urlpatterns = patterns(
     url(r'^api/', include('apps.subscribe.urls', namespace='subscribe_app')),
     # Home app.
     url(r'^', include('apps.home.urls', namespace='home_app')),
+    # Python social auth.
+    url('', include('social.apps.django_app.urls', namespace='social')),
 )
