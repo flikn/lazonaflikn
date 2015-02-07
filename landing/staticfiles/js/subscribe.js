@@ -27,7 +27,7 @@ $("#button").unbind('click').click(function() {
 
       switch (data.code) {
         case 200:
-          message = '<p><i class="fa fa-check-circle"></i> Cliente válido.</p>'
+          message = '<p><i class="fa fa-check-circle"></i> Cliente válido! Aún puede user esta cuenta movistar ' + data.lifetime + ' veces más. <strong>Invita a tus amigos o familiares!</strong></p>'
           type_alert = "alert alert-success";
           break;
         case 500:
@@ -35,7 +35,7 @@ $("#button").unbind('click').click(function() {
           type_alert = "alert alert-danger";
           break;
         case 403:
-          message = '<p><i class="fa fa-lock"></i> Este cliente ya fue validado 3 veces.</p>'
+          message = '<p><i class="fa fa-lock"></i> Código movistar no valido.</p>'
           type_alert = "alert alert-warning";
           break;
         default: //400
@@ -50,7 +50,9 @@ $("#button").unbind('click').click(function() {
 
       // Redirect.
       if (data.code == 200) {
-        window.location.replace("http://onlineclass.pythonindia.com/welcome-page1/");
+        setTimeout(function() {
+          window.location.replace("/thanks/");
+        }, 3000);
       }
     })
     .fail(function(object, msg) {
