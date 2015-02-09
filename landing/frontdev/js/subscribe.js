@@ -52,7 +52,7 @@ $("#button").unbind('click').click(function() {
       if (data.code == 200) {
         setTimeout(function() {
           window.location.replace("/thanks/");
-        }, 3000);
+        }, 2000);
       }
     })
     .fail(function(object, msg) {

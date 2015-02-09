@@ -1,8 +1,12 @@
 from django.contrib import admin
+from utils.actions import export_as_excel
 from .models import Subscriptor
 
 
 class SubscriptorAdmin(admin.ModelAdmin):
+    actions = (
+        export_as_excel,
+    )
     list_display = (
         'id',
         'client',
