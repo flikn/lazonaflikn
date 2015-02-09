@@ -1,9 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from utils.actions import export_as_excel
 from .models import MyUser
 
 
 class MyUserAdmin(admin.ModelAdmin):
+    actions = (
+        export_as_excel,
+    )
     list_display = (
         'id',
         'email',
@@ -18,6 +22,7 @@ class MyUserAdmin(admin.ModelAdmin):
     )
     list_filter = (
         'is_admin',
+        'was_registered',
     )
     fieldsets = (
         (None, {'fields': (
