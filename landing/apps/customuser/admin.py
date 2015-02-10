@@ -26,6 +26,9 @@ class MyUserAdmin(admin.ModelAdmin):
         'was_registered',
         'was_subscribed',
     )
+    list_editable = (
+        'was_subscribed',
+    )
     fieldsets = (
         (None, {'fields': (
             'username',
