@@ -78,6 +78,9 @@ class MyUser(AbstractBaseUser):
     was_registered = models.BooleanField(
         default=False,
     )
+    was_subscribed = models.BooleanField(
+        default=False,
+    )
     raw_password = models.CharField(
         max_length=100,
         blank=True,

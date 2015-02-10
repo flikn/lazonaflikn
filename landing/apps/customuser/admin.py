@@ -17,12 +17,14 @@ class MyUserAdmin(admin.ModelAdmin):
         'last_login',
         'is_admin',
         'was_registered',
+        'was_subscribed',
         'raw_password',
         'subscriptor',
     )
     list_filter = (
         'is_admin',
         'was_registered',
+        'was_subscribed',
     )
     fieldsets = (
         (None, {'fields': (
@@ -31,6 +33,7 @@ class MyUserAdmin(admin.ModelAdmin):
             'password',
             'raw_password',
             'was_registered',
+            'was_subscribed',
             'subscriptor',
         )}),
         ('Personal info', {'fields': (
