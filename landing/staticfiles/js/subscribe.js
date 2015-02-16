@@ -1,10 +1,5 @@
 var csrftoken = $.cookie('csrftoken');
 
-
-$(document).ready(function() {
-  $("#message").css('visibility', 'hidden');
-});
-
 $("#button").unbind('click').click(function() {
   var client = $("#client").val();
   var account = $("#account").val();
