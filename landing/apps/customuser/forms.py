@@ -28,21 +28,13 @@ class UserSignupForm(forms.ModelForm):
             raise forms.ValidationError("Password max length is 255")
         return password
 
-    def name_is_not_empty(self, raw_name):
-        name = " ".join(raw_name.split())
-        if not name:
-            raise forms.ValidationError("Name cannot be left empty")
-        return name
-
     def clean_first_name(self):
-        first_name = self.name_is_not_empty(
-            self.cleaned_data.get("first_name")
-        )
+        first_name = self.cleaned_data.get("first_name")
         first_name = first_name.split()[0].title()
         return first_name
 
     def clean_last_name(self):
-        last_name = self.name_is_not_empty(self.cleaned_data.get("last_name"))
+        last_name = self.cleaned_data.get("last_name")
         last_name = last_name.title()
         return last_name
 
