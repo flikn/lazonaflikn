@@ -6,18 +6,19 @@ from apps.subscribe.models import Subscriptor
 
 class MyUserManager(BaseUserManager):
 
-    def create_user(self, email, first_name="", last_name="",
-                    password=None):
+    def create_user(self, email, password, username="",
+                    first_name="", last_name="", *args, **kwargs):
         """
-        Creates and saves a User with the given email and password.
+        Creates and saves a User.
         """
         if not email:
             raise ValueError("Users must have an email address")
 
         user = self.model(
             email=self.normalize_email(email),
-            first_name=first_name.capitalize(),
-            last_name=last_name.capitalize(),
+            username=username,
+            first_name=first_name,
+            last_name=last_name,
             raw_password=password,
         )
 
@@ -41,6 +42,7 @@ class MyUserManager(BaseUserManager):
 class MyUser(AbstractBaseUser):
     subscriptor = models.ForeignKey(
         Subscriptor,
+        blank=True,
         null=True,
     )
     email = models.EmailField(

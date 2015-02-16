@@ -156,3 +156,17 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get(
     'SOCIAL_AUTH_FACEBOOK_SECRET', ' '
 )
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'apps.customuser.pipeline.associate_by_email_or_username',
+    'social.pipeline.user.get_username',
+    'apps.customuser.pipeline.require_extra_data',
+    'apps.customuser.pipeline.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+)

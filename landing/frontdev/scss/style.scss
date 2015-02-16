@@ -14862,3 +14862,14 @@ label.movistar_code{
   font-family: ssp_regular; 
   color: #545454;
 }
+
+.pc_inputs {
+  input {
+    &[readonly] {
+      font-weight: bold;
+      color: #666666;
+      background-color: #FDFEC0 !important;
+      cursor: not-allowed;
+    }
+  }
+}
