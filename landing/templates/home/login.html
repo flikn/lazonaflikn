@@ -44,17 +44,7 @@
   <div class="check_out">
     <div class="co_margen">
     
-      {% if not message %}
-      <div class="alert alert-info alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        Completa la información de tu cuenta para poder acceder al <strong>beneficio exclusivo</strong> de clientes Movistar.
-      </div>
-      {% else %}
-      <div class="alert alert-danger alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <i class="fa fa-lock"></i> {{ message }}
-      </div>
-      {% endif %}
+      {% include "home/message.html" %}
 
       <div class="co_variable">
         <div class="cv_head">
