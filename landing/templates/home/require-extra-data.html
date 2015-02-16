@@ -36,17 +36,18 @@
     </ul>
   </div>
 </div>
+
 <div class="wrapper">
 
   {% include "home/header.html" %}
 
   <div class="check_out">
     <div class="co_margen">
-      
+    
       {% if not message %}
       <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        Completa la información de tu cuenta para poder acceder al <strong>beneficio exclusivo</strong> de clientes Movistar.
+        Completa la información de tu cuenta para poder acceder al <strong>beneficio exclusivo</strong> de clientes Movistar. 
       </div>
       {% else %}
       <div class="alert alert-danger alert-dismissible" role="alert">
@@ -56,61 +57,60 @@
       {% endif %}
 
       <div class="co_variable">
-        
         <div class="cv_head">
-          <div class="ch_title">1. Registrate</div>
+          <div class="ch_title">1. Completar Registro</div>
           <div class="ch_title ct_second">2. Ingresa Código Movistar</div>
         </div>
-
         <div class="cv_body">
           <div class="star_session">
-            <div class="pc_buttons">
-              <a href="{% url 'social:begin' 'facebook' %}" class="facebook">
-                <i class="fa fa-facebook"></i><p>Regístrate con Facebook</p>
-              </a>
-              <a href="{% url 'social:begin' 'twitter' %}" class="twitter">
-                <i class="fa fa-twitter"></i><p>Regístrate con Twitter</p>
-              </a>
-            </div>
-            <div class="pc_line">
-              <p>O</p>
-            </div>
-            <div class="pc_inputs">
-              <form action="" method="POST">
-                {% csrf_token %}
-                <div class="pi_inline">
-                  <input type="text" name="first_name" placeholder="Nombre" required/>
-                  <input type="text" name="last_name" placeholder="Apellido" required/>
-                </div>
-                <input type="email" name="email" placeholder="Correo electrónico" required/>
-                <input type="password" minlength="6" name="password" placeholder="Contraseña" required/>
+          
+            <form class="pc_inputs" action="" method="post">
+              {% csrf_token %}
+              <div class="pi_inline">
+                <input type="text" name="first_name" placeholder="Nombre"
+                {% if details.first_name %}
+                   value="{{details.first_name}}" readonly disabled
+                {% else %}
+                  required
+                {% endif %}
+                />
+              
+                <input type="text" name="last_name" placeholder="Apellido"
+                {% if details.last_name %}
+                  value="{{details.last_name}}" readonly disabled
+                {% else %}
+                  required
+                {% endif %}
+                />
+              </div>
 
-                <button class="btn_naranja" type="submit">Regístrate</button>
-              </form>
-            </div>
+              <input type="email" name="email" placeholder="Correo electrónico" 
+              {% if details.email %}
+                value="{{details.email}}" readonly disabled
+              {% else %}
+                required
+              {% endif %}
+              />
 
-            <div class="term_condition">
-              <p>Al registrarte estarás aceptando nuestros <a href="">Términos y Condiciones</a> y <a href="">Políticas de Privacidad</a>.</p>
-            </div>
-            <div class="pc_login">
-              <p>¿Ya tienes una cuenta? <a href="{% url 'home_app:login' %}">Inicia sesión</a>
-              </p>
-            </div>
+              <label class="movistar_code" for="email">Contraseña</label>
+              <input id="password" type="password" name="password" placeholder="Contraseña" required />
+              <button class="btn_naranja" type="submit">Completar Regístro</button>
+            </form>
 
           </div>
         </div>
-        
+
         <div class="cv_footer">
           <figure>
             <img src="{% static "img/logo_movistar.png" %}" width="103">
           </figure> 
-        </div>
+        </div> 
 
       </div>
 
       {% include "home/banner.html" %}
+    
     </div>
   </div>
-
 </div>
 {% endblock content %}
